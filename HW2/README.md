@@ -1,8 +1,3 @@
-[![Mypy](https://github.com/Nick-Liou/Probabilistic-Modeling-and-Reasoning-HW2/actions/workflows/mypy.yml/badge.svg)](https://github.com/Nick-Liou/Probabilistic-Modeling-and-Reasoning-HW2/actions/workflows/mypy.yml)
-
-<!-- 
-[![Tests](https://github.com/Nick-Liou/Probabilistic-Modeling-and-Reasoning-HW2/actions/workflows/pytest.yml/badge.svg)](https://github.com/Nick-Liou/Probabilistic-Modeling-and-Reasoning-HW2/actions/workflows/pytest.yml)
--->
 
 # Probabilistic-Modeling-and-Reasoning-HW2
 A repository for solution to the problems of:
