@@ -1,0 +1,719 @@
+\documentclass{article}
+
+% Import packages from local file
+\usepackage{packages}
+
+% Define the homework number as a variable
+\newcommand{\HomeworkNumber}{3}
+
+
+\begin{document}
+
+% Add the cover
+\input{cover}
+
+
+\section*{Problem 1}
+
+Given:
+
+\[
+p(x,y) \propto (x^2+y^2)^2 e^{-x^2-y^2} \quad dom(x) = dom(y) = \left\{   - \inf, \ldots , inf  \right\} 
+\]
+
+Show that:
+
+
+\[
+\left\langle x \right\rangle = \left\langle y \right\rangle = 0 
+\]
+
+
+\[
+ \left\langle xy \right\rangle = \left\langle x \right\rangle \left\langle y \right\rangle 
+\]
+
+
+\[
+p(x,y) \neq p(x) p(y)
+\]
+
+
+
+% \[
+% integral -inf to inf  y * 1/4 e^(-y^2) sqrt(π) (3 + 4 (y^2 + y^4))
+% \]
+
+
+
+% \[
+% integral -inf to inf  y * 1/4 e^(-y^2) sqrt(π) (3 + 4 (y^2 + y^4))
+% \]
+
+Find c such that $p(x,y)$ is a distribution:
+
+\[
+p(x,y) = \frac{1}{c} (x^2+y^2)^2 e^{-x^2-y^2} 
+\]
+
+\begin{equation*}    
+c = \int _{-\infty }^{\infty } \int _{-\infty }^{\infty } (x^2+y^2)^2  e^{-x^2-y^2} \, dx dy = 2\pi
+\end{equation*}
+
+Therefore 
+
+
+\begin{equation} 
+p(x,y) = \frac{1}{2\pi} (x^2+y^2)^2 e^{-x^2-y^2} 
+\end{equation}
+
+
+
+We know that
+\begin{equation}    
+\int _{-\infty }^{\infty }e^{-a(x+b)^{2}}\,dx={\sqrt {\frac {\pi }{a}}}
+\end{equation}
+
+Using the above and by differentiating under the integral sign, it is apparent that: 
+\begin{equation}
+    \begin{aligned}
+\int _{-\infty }^{\infty }x^{2n}e^{-\alpha x^{2}}\,dx
+&=\left(-1\right)^{n}\int _{-\infty }^{\infty }{\frac {\partial ^{n}}{\partial \alpha ^{n}}}e^{-\alpha x^{2}}\,dx\\
+&=\left(-1\right)^{n}{\frac {\partial ^{n}}{\partial \alpha ^{n}}}\int _{-\infty }^{\infty }e^{-\alpha x^{2}}\,dx\\[6pt]
+&={\sqrt {\pi }}\left(-1\right)^{n}{\frac {\partial ^{n}}{\partial \alpha ^{n}}}\alpha ^{-{\frac {1}{2}}}\\
+&={\sqrt {\frac {\pi }{\alpha }}}{\frac {(2n-1)!!}{\left(2\alpha \right)^{n}}}
+    \end{aligned}
+\end{equation}
+
+
+
+
+\begin{equation*}    
+    \begin{aligned}
+p(x) &=  \int _{-\infty }^{\infty } p(x,y) \,dy \\
+&= \int _{-\infty }^{\infty } \frac{1}{2\pi} (x^2+y^2)^2  e^{-x^2-y^2} \,dy \\
+&= \frac{1}{2\pi} \int _{-\infty }^{\infty } (x^4+2x^2y^2 + y^4)  e^{-x^2-y^2} \,dy \\
+&= \frac{1}{2\pi} \int _{-\infty }^{\infty } x^4  e^{-x^2-y^2} \,dy +
+   \frac{1}{2\pi} \int _{-\infty }^{\infty } 2x^2y^2 e^{-x^2-y^2} \,dy +
+   \frac{1}{2\pi} \int _{-\infty }^{\infty } y^4 e^{-x^2-y^2} \,dy 
+\\
+&= \frac{1}{2\pi} x^4  e^{-x^2} \int _{-\infty }^{\infty } e^{-y^2} \,dy +
+   \frac{1}{2\pi} 2x^2 e^{-x^2} \int _{-\infty }^{\infty } y^2 e^{-y^2} \,dy +
+   \frac{1}{2\pi} e^{-x^2} \int _{-\infty }^{\infty } y^4 e^{-y^2} \,dy 
+\\
+&= \frac{1}{2\pi} x^4  e^{-x^2} \sqrt{\pi} +
+   \frac{1}{2\pi} 2x^2 e^{-x^2} \frac{\sqrt{\pi}}{2} +
+   \frac{1}{2\pi} e^{-x^2} \frac{3\sqrt{\pi}}{4}
+\\
+&= \frac{\sqrt{\pi}}{2\pi} (x^4+x^2 +\frac{3}{4} ) e^{-x^2}  
+    \end{aligned}
+\end{equation*}
+
+
+
+
+Because $p(x)$ is an even function, $xp(x)$ is an odd function, therefore it follows that:
+
+\begin{equation*}    
+\left\langle x \right\rangle =  \int _{-\infty }^{\infty } x p(x) \,dx 
+\end{equation*}
+
+\[
+\left\langle x \right\rangle =  \int _{-\infty }^{\infty } x \frac{\sqrt{\pi}}{2\pi} (x^4+x^2 +\frac{3}{4} ) e^{-x^2}  \,dx 
+=   \int _{-\infty }^{\infty }  \frac{\sqrt{\pi}}{2\pi} (x^5+x^3 +\frac{3}{4}x ) e^{-x^2}  \,dx = 0 
+\]
+
+Similarly, we can calculate $p(y)$ and $\left\langle y \right\rangle$ as: 
+
+\begin{equation*}    
+p(y) =  \frac{\sqrt{\pi}}{2\pi} (y^4+y^2 +\frac{3}{4} ) e^{-y^2} 
+\end{equation*}
+
+\begin{equation*}    
+\left\langle y \right\rangle =  0
+\end{equation*}
+
+To check if they are uncorrelated, we must find the covariance. To do so, we first find $\left\langle xy \right\rangle$
+
+\begin{equation*}    
+\left\langle xy \right\rangle =  \int _{-\infty }^{\infty } \int _{-\infty }^{\infty } xy p(x,y) \,dx \,dy 
+\end{equation*}
+
+
+\begin{equation*}    
+\left\langle xy \right\rangle =  \int _{-\infty }^{\infty } \int _{-\infty }^{\infty } xy \frac{1}{2\pi} (x^2+y^2)^2 e^{-x^2-y^2} \,dx \,dy = 0
+\end{equation*}
+
+Which holds because $xyp(x,y)$ is odd with respect to both $x$ and $y$. 
+
+Thus, x and y are uncorrelated because:
+
+\begin{equation*}    
+cov(x,y) = \left\langle xy \right\rangle - \left\langle x \right\rangle \left\langle y \right\rangle = 0 
+\end{equation*}
+
+But they are dependent because:
+
+\begin{equation*}    
+\begin{aligned}    
+p(x,y) &\neq p(x) p(y)  \\
+\frac{1}{2\pi} (x^2+y^2)^2 e^{-x^2-y^2} &\neq \frac{\sqrt{\pi}}{2\pi} (x^4+x^2 +\frac{3}{4} ) e^{-x^2}    \frac{\sqrt{\pi}}{2\pi} (y^4+y^2 +\frac{3}{4} ) e^{-y^2} \\
+\frac{1}{2\pi} (x^2+y^2)^2 e^{-x^2-y^2} &\neq \frac{1}{4\pi} (x^4+x^2 +\frac{3}{4} )  (y^4+y^2 +\frac{3}{4} )  e^{-x^2-y^2}
+\end{aligned}
+\end{equation*}
+
+\section*{Problem 2}
+\subsection*{Part 1}
+Given: A random variable \( X \) with probability density function \( f_X(x) \) and a strictly monotonic function \( g: \mathbb{R} \to \mathbb{R} \).
+
+Goal: Find the probability density function \( f_Y(y) \) of \( Y = g(X) \).
+
+Since \( g \) is monotonic, we consider two cases: \( g \) is strictly increasing or strictly decreasing.
+
+The cumulative distribution function (CDF) of \( Y \) is:
+   \[
+   F_Y(y) = P(Y \leq y) = P(g(X) \leq y)
+   \]
+
+\textbf{Case 1}: \( g \) is strictly increasing:\\
+If \( g \) is strictly increasing, then \( g(x) \leq y \) implies \( x \leq g^{-1}(y) \). Thus,
+   \[
+   F_Y(y) = P(X \leq g^{-1}(y)) = F_X(g^{-1}(y))
+   \]
+
+\textbf{Case 2}: \( g \) is strictly decreasing:\\
+If \( g \) is strictly decreasing, then \( g(x) \leq y \) implies \( x \geq g^{-1}(y) \). Thus,
+   \[
+   F_Y(y) = P(X \geq g^{-1}(y)) = 1 - F_X(g^{-1}(y))
+   \]
+
+Differentiate to Find \( f_Y(y) \):\\
+   In both cases, we differentiate \( F_Y(y) \) with respect to \( y \) to find \( f_Y(y) \):\\
+   
+   \begin{itemize}
+       \item For an increasing \( g \):\\     
+\begin{equation*}
+     f_Y(y) = \frac{d}{dy} F_X(g^{-1}(y)) = f_X(g^{-1}(y)) \cdot \frac{d}{dy} \left( g^{-1}(y) \right)
+    \end{equation*}
+           \item For a decreasing \( g \):\\     
+\begin{equation*}    
+     f_Y(y) = \frac{d}{dy} \left( 1 - F_X(g^{-1}(y)) \right) = f_X(g^{-1}(y)) \cdot \left| \frac{d}{dy} g^{-1}(y) \right|
+\end{equation*}
+     
+\end{itemize}
+
+By the inverse function theorem, \( \frac{d}{dy} g^{-1}(y) = \frac{1}{g'(g^{-1}(y))} \). Therefore, in both cases we have:
+   \[
+   f_Y(y) = f_X(g^{-1}(y)) \cdot \left| \frac{1}{g'(g^{-1}(y))} \right|
+   \]
+
+Thus, the probability density function \( f_Y(y) \) is:
+   \[
+   f_Y(y) = f_X(g^{-1}(y)) \cdot \left| g'(g^{-1}(y)) \right|^{-1}
+   \]
+\subsection*{Part 2}
+% % Given: Let \( \textbf{X} \) be a random vector with a joint probability density function  \( f_X(\textbf{x}) \) and a strictly monotonic function \( g: \mathbb{R}^n \to \mathbb{R}^n \).
+
+% % Goal: Find the probability density function \( f_Y(y) \) of \( Y = g(X) \).
+
+% Let \( X \) be a random variable in \( \mathbb{R}^p \) with joint probability density function (pdf) \( f_X(x) \) defined on \( \mathbb{R}^p \). Suppose we have a transformation \( Y = g(X) \), where \( g: \mathbb{R}^p \to \mathbb{R}^p \) is a 1-to-1 differentiable function. We aim to find the pdf \( f_Y(y) \) of the random variable \( Y \).
+
+% Step 1: Expected Value with Change of Variables
+
+% Consider the expectation of any "nice" (sufficiently integrable) function \( h(Y) \) of \( Y \):
+% \[
+% \mathbb{E}[h(Y)] = \int_{\mathbb{R}^p} h(y) f_Y(y) \, dy.
+% \]
+% Alternatively, we can express \( \mathbb{E}[h(Y)] \) in terms of \( X \) by writing
+% \[
+% \mathbb{E}[h(Y)] = \int_{\mathbb{R}^p} h(g(x)) f_X(x) \, dx.
+% \]
+
+% Step 2: Change of Variables Using the Jacobian Determinant
+
+% Since \( g \) is differentiable and invertible, we can relate the differentials \( dy \) and \( dx \) using the Jacobian matrix \( J(x) \), where \( J(x) \) is defined by
+% \[
+% J(x) = \left\{ \frac{\partial y_i}{\partial x_j} \right\}.
+% \]
+% The Jacobian determinant \( \det J(x) \) measures the local "stretching" or "compression" caused by the transformation \( g(x) \).
+
+% Since \( Y = g(X) \), the change of variables formula implies that
+% \[
+% dy = | \det J(x) | \, dx.
+% \]
+% Therefore, we can rewrite the expectation as
+% \[
+% \mathbb{E}[h(Y)] = \int_{\mathbb{R}^p} h(g(x)) f_X(x) \, dx = \int_{\mathbb{R}^p} h(y) f_Y(y) \, | \det J(x) | \, dx.
+% \]
+
+% Step 3: Equating Integrands to Find \( f_Y(y) \)
+
+% Since the choice of \( h(y) \) is arbitrary, we must have that the integrands in both expressions are equal. This gives us
+% \[
+% f_Y(y) = f_X(x) / | \det J(x) |, \quad x = g^{-1}(y).
+% \]
+% In other words,
+% \[
+% f_Y(y) = f_X(g^{-1}(y)) \left| \det J(g^{-1}(y)) \right|^{-1}
+% \]
+% \section*{Rigorous Proof of the Change of Variables for Multivariable Random Variables}
+
+Let \( X \) be a random variable in \( \mathbb{R}^p \) with joint probability density function \( f_X(x) \) (with respect to the Lebesgue measure), so that for any (measurable) set \( A \subset \mathbb{R}^p \),
+\[
+\mathbb{P}(X \in A) = \int_A f_X(x) \, dx.
+\]
+Let \( g: \mathbb{R}^p \rightarrow \mathbb{R}^p \) be a bijective, continuously differentiable function. We define a new random variable \( Y = g(X) \) and aim to determine the probability density function \( f_Y(y) \) of \( Y \) (with respect to the Lebesgue measure).
+
+Step 1: Transformation and (Preimage Sets)
+
+For any (measurable) set \( B \subset \mathbb{R}^p \), we express the probability that \( Y \) takes a value in \( B \) in terms of \( X \):
+\[
+\mathbb{P}(Y \in B) = \mathbb{P}(g(X) \in B).
+\]
+Since \( g \) is bijective, the event \( g(X) \in B \) is equivalent to \( X \in g^{-1}(B) \), where \( g^{-1}(B) \) denotes the preimage of \( B \) under \( g \). Therefore,
+\[
+\mathbb{P}(Y \in B) = \mathbb{P}(X \in g^{-1}(B)) = \int_{g^{-1}(B)} f_X(x) \, dx.
+\]
+
+Step 2: Change of Variables Using the Jacobian
+
+The set \( g^{-1}(B) \) is the preimage of \( B \) under \( g \), and by the change of variables theorem in multivariable calculus, we can transform the integral over \( g^{-1}(B) \) to an integral over \( B \) by using the Jacobian determinant of \( g \).
+
+Define the Jacobian matrix \( J(x) \) of \( g \) at \( x \) by
+\[
+J(x) = \left( \frac{\partial g_i}{\partial x_j} \right)_{i,j=1}^p,
+\]
+and let \( \det J(x) \) denote its determinant. By the change of variables formula, we have
+\[
+\int_{g^{-1}(B)} f_X(x) \, dx = \int_B f_X(g^{-1}(y)) \left| \det J(g^{-1}(y)) \right|^{-1} \, dy.
+\]
+Therefore,
+\[
+\mathbb{P}(Y \in B) = \int_B f_X(g^{-1}(y)) \left| \det J(g^{-1}(y)) \right|^{-1} \, dy.
+\]
+
+Step 3: Identifying the Density \( f_Y(y) \)
+
+The probability \( \mathbb{P}(Y \in B) \) for any (measurable) set \( B \) can also be expressed in terms of the pdf \( f_Y(y) \) of \( Y \) as
+\[
+\mathbb{P}(Y \in B) = \int_B f_Y(y) \, dy.
+\]
+By comparing this expression with the result from Step 2, we find that
+\[
+f_Y(y) = f_X(g^{-1}(y)) \left| \det J(g^{-1}(y)) \right|^{-1}.
+\]
+
+Conclusion
+
+We have derived that the pdf \( f_Y(y) \) of the transformed random variable \( Y = g(X) \) is given by
+\[
+f_Y(y) = \frac{f_X(x)}{| \det J(x) |} \quad \text{where } x = g^{-1}(y).
+\]
+In other words,
+\[
+f_Y(y) = f_X(g^{-1}(y)) \left| \det J(g^{-1}(y)) \right|^{-1}
+\]
+
+\section*{Problem 3}
+
+To derive the differential entropy of a multivariate normal distribution \( X \sim \mathcal{N}(\mu, \Sigma) \), we start from the general definition of differential entropy.
+
+\textbf{1. \textbf{Differential Entropy Definition}}
+
+For a continuous random variable \( X \) with pdf \( f(x) \), the differential entropy \( h(X) \) is defined as:
+\[
+h(X) = - \int_{\mathbb{R}^d} f(x) \log f(x) \, dx
+\]
+
+\textbf{2. \textbf{Multivariate Normal Distribution PDF}}
+
+For a \( d \)-dimensional multivariate normal distribution \( X \sim \mathcal{N}(\mu, \Sigma) \), the probability density function is:
+\[
+f(x) = \frac{1}{(2 \pi)^{d/2} \, |\Sigma|^{1/2}} \exp \left( -\frac{1}{2} (x - \mu)^\top \Sigma^{-1} (x - \mu) \right)
+\]
+
+% where:
+% - \( d \) is the dimensionality of \( X \),
+% - \( \mu \) is the mean vector,
+% - \( \Sigma \) is the covariance matrix,
+% - \( |\Sigma| \) denotes the determinant of \( \Sigma \).
+
+\textbf{3. \textbf{Substitute the PDF into the Entropy Formula}}
+
+Substituting \( f(x) \) into the entropy formula:
+\[
+h(X) = - \int_{\mathbb{R}^d} f(x) \log f(x) \, dx
+\]
+we get:
+\[
+h(X) = - \int_{\mathbb{R}^d} \frac{\exp \left( -\frac{1}{2} (x - \mu)^\top \Sigma^{-1} (x - \mu) \right)}{(2 \pi)^{d/2} |\Sigma|^{1/2}}  \log \left( \frac{\exp \left( -\frac{1}{2} (x - \mu)^\top \Sigma^{-1} (x - \mu) \right)}{(2 \pi)^{d/2} |\Sigma|^{1/2}}  \right) dx
+\]
+
+% \[
+% h(X) = - \int_{\mathbb{R}^d} \frac{1}{(2 \pi)^{d/2} |\Sigma|^{1/2}} \exp \left( -\frac{1}{2} (x - \mu)^\top \Sigma^{-1} (x - \mu) \right) \log \left( \frac{1}{(2 \pi)^{d/2} |\Sigma|^{1/2}} \exp \left( -\frac{1}{2} (x - \mu)^\top \Sigma^{-1} (x - \mu) \right) \right) dx
+% \]
+
+\textbf{4. \textbf{Simplify the Logarithmic Term}}
+
+Expanding the logarithm:
+\[
+\log f(x) = \log \left( \frac{1}{(2 \pi)^{d/2} |\Sigma|^{1/2}} \right) + \log \left( \exp \left( -\frac{1}{2} (x - \mu)^\top \Sigma^{-1} (x - \mu) \right) \right)
+\]
+yields:
+\[
+\log f(x) = -\frac{d}{2} \log(2 \pi) - \frac{1}{2} \log |\Sigma| - \frac{1}{2} (x - \mu)^\top \Sigma^{-1} (x - \mu)
+\]
+
+\textbf{5. \textbf{Substitute and Separate Terms}}
+
+Substitute \( \log f(x) \) back into the entropy integral:
+\[
+h(X) = - \int_{\mathbb{R}^d} f(x) \left( -\frac{d}{2} \log(2 \pi) - \frac{1}{2} \log |\Sigma| - \frac{1}{2} (x - \mu)^\top \Sigma^{-1} (x - \mu) \right) dx
+\]
+Distribute \( f(x) \) and separate terms:
+\[
+h(X) = \frac{d}{2} \log(2 \pi) + \frac{1}{2} \log |\Sigma| + \frac{1}{2} \int_{\mathbb{R}^d} f(x) (x - \mu)^\top \Sigma^{-1} (x - \mu) \, dx
+\]
+
+\textbf{6. \textbf{Evaluate Integral Terms}}
+
+Constant Terms\\
+The first two terms are constants, unaffected by the integration and because $f(x)$ is a pdf they are simplified using: 
+\[
+ \int_{\mathbb{R}^d} f(x)  \, dx = 1
+\]
+Quadratic Term \\
+The last term represents the expected value of \( (x - \mu)^\top \Sigma^{-1} (x - \mu) \) under \( f(x) \), (the Mahalanobis distance squared). Since \( X \) is multivariate normal with covariance \( \Sigma \), this expectation evaluates to the trace of the identity matrix in \( d \)-dimensions, which is \( d \).
+\[
+\int_{\mathbb{R}^d} f(x) (x - \mu)^\top \Sigma^{-1} (x - \mu) \, dx = d
+\]
+
+It can be proven by viewing the integral as an expected value: 
+
+\[
+\left< (x - \mu)^\top \Sigma^{-1} (x - \mu) \right>_{\mathcal{N}(\mu, \Sigma)}
+\]
+
+
+\textbf{Step 1}: Expand \((x - \mu)^\top \Sigma^{-1} (x - \mu)\)
+
+\[
+(x - \mu)^\top \Sigma^{-1} (x - \mu) = x^\top \Sigma^{-1} x - x^\top \Sigma^{-1} \mu - \mu^\top \Sigma^{-1} x + \mu^\top \Sigma^{-1} \mu
+\]
+
+Since they are scalars, \(x^\top \Sigma^{-1} \mu = \mu^\top \Sigma^{-1} x\) and we can rewrite it as:
+
+\[
+(x - \mu)^\top \Sigma^{-1} (x - \mu) = x^\top \Sigma^{-1} x - 2 \mu^\top \Sigma^{-1} x + \mu^\top \Sigma^{-1} \mu
+\]
+
+\textbf{Step 2}: Take the Expectation Over \( \mathcal{N}(\mu, \Sigma) \)
+
+Now we take the expectation over each term separately:
+
+\[
+\left< (x - \mu)^\top \Sigma^{-1} (x - \mu) \right>_{\mathcal{N}(\mu, \Sigma)} = \mathbb{E} \left[ x^\top \Sigma^{-1} x \right] - 2 \mathbb{E} \left[ \mu^\top \Sigma^{-1} x \right] + \mathbb{E} \left[ \mu^\top \Sigma^{-1} \mu \right]
+\]
+
+\textit{Term 1}: \( \mathbb{E} \left[ x^\top \Sigma^{-1} x \right] \)
+
+Since \( x^\top \Sigma^{-1} x = \operatorname{Tr}(x^\top \Sigma^{-1} x) = \operatorname{Tr}(\Sigma^{-1} x x^\top) \), we have:
+\[
+\mathbb{E} \left[ x^\top \Sigma^{-1} x \right] = \mathbb{E} \left[ \operatorname{Tr}(\Sigma^{-1} x x^\top) \right] = \operatorname{Tr}(\Sigma^{-1} \mathbb{E}[x x^\top])
+\]
+Using \( \mathbb{E}[x x^\top] = \Sigma + \mu \mu^\top \), this becomes:
+\[
+\mathbb{E} \left[ x^\top \Sigma^{-1} x \right] = \operatorname{Tr}(\Sigma^{-1} (\Sigma + \mu \mu^\top)) = \operatorname{Tr}(\Sigma^{-1} \Sigma) + \operatorname{Tr}(\Sigma^{-1} \mu \mu^\top)
+\]
+Since \( \operatorname{Tr}(\Sigma^{-1} \Sigma) = \operatorname{Tr}(I) = d \), where \(d\) is the dimension, and \( \operatorname{Tr}(\Sigma^{-1} \mu \mu^\top) =  \operatorname{Tr}(\mu^\top \Sigma^{-1} \mu )=  \mu^\top \Sigma^{-1} \mu \), we get:
+\[
+\mathbb{E} \left[ x^\top \Sigma^{-1} x \right] = d + \mu^\top \Sigma^{-1} \mu
+\]
+
+\textit{Term 2}: \( -2 \mathbb{E} \left[ \mu^\top \Sigma^{-1} x \right] \)
+
+Since \( \mu^\top \Sigma^{-1} \) is constant with respect to \( x \), we have:
+\[
+-2 \mathbb{E} \left[ \mu^\top \Sigma^{-1} x \right] = -2 \mu^\top \Sigma^{-1} \mathbb{E}[x] = -2 \mu^\top \Sigma^{-1} \mu
+\]
+
+\textit{Term 3}: \( \mathbb{E} \left[ \mu^\top \Sigma^{-1} \mu \right] \)
+
+This term is constant, so its expectation is simply:
+\[
+\mathbb{E} \left[ \mu^\top \Sigma^{-1} \mu \right] = \mu^\top \Sigma^{-1} \mu
+\]
+
+\textbf{Step 3}: Combine All Terms
+
+Now we combine these results:
+\[
+\left< (x - \mu)^\top \Sigma^{-1} (x - \mu) \right>_{\mathcal{N}(\mu, \Sigma)} = d + \mu^\top \Sigma^{-1} \mu - 2 \mu^\top \Sigma^{-1} \mu + \mu^\top \Sigma^{-1} \mu
+\]
+Simplifying terms involving \( \mu^\top \Sigma^{-1} \mu \), we get:
+\[
+\left< (x - \mu)^\top \Sigma^{-1} (x - \mu) \right>_{\mathcal{N}(\mu, \Sigma)} = d
+\]
+
+\textbf{Final Result}
+
+Thus, the differential entropy of a \( d \)-dimensional multivariate normal distribution \( X \sim \mathcal{N}(\mu, \Sigma) \) is:
+\[
+h(X) = \frac{d}{2} \log(2 \pi) + \frac{1}{2} \log |\Sigma| + \frac{1}{2} \cdot d
+\]
+or equivalently:
+\[
+h(X) = \frac{1}{2} \log \left( (2 \pi e)^d |\Sigma| \right)
+\]
+
+\section*{Problem 4}
+
+Let \( y \) be linearly related to \( x \) through
+\(
+y = \mathbf{M} x + \eta
+\)
+where \( x \perp \eta \), \( \eta \sim \mathcal{N}(\mu, \Sigma) \), and \( x \sim \mathcal{N}(\mu_x, \Sigma_x) \). 
+
+Prove that the marginal \( p(y) = \int_x p(y|x) p(x) \) is a Gaussian:
+\[
+p(y) = \mathcal{N} \left( y \mid \mathbf{M} \mu_x + \mu, \, \mathbf{M} \Sigma_x \mathbf{M}^\top + \Sigma \right)
+\]
+\textbf{Part 1} \\
+
+We start with the expression for \( p(y) \):
+\[
+p(y) = \int p(y | x) p(x) \, dx
+\]
+\[
+p(y) \propto \int \exp \left( -\frac{1}{2} (y - Mx - \mu)^\top \Sigma^{-1} (y - Mx - \mu) - \frac{1}{2} (x - \mu_x)^\top \Sigma_x^{-1} (x - \mu_x) \right) dx
+\]
+
+Expanding the Quadratic Forms
+
+% First term: Expanding \( (y - Mx - \mu)^\top \Sigma^{-1} (y - Mx - \mu) \)
+   \[
+   (y - Mx - \mu)^\top \Sigma^{-1} (y - Mx - \mu) = y^\top \Sigma^{-1} y - 2 y^\top \Sigma^{-1} M x + x^\top M^\top \Sigma^{-1} M x - 2 y^\top \Sigma^{-1} \mu + 2 x^\top M^\top \Sigma^{-1} \mu + \mu^\top \Sigma^{-1} \mu
+   \]
+
+% 2. **Second term:** Expanding \( (x - \mu_x)^\top \Sigma_x^{-1} (x - \mu_x) \)
+   \[
+   (x - \mu_x)^\top \Sigma_x^{-1} (x - \mu_x) = x^\top \Sigma_x^{-1} x - 2 x^\top \Sigma_x^{-1} \mu_x + \mu_x^\top \Sigma_x^{-1} \mu_x
+   \]
+
+Combine Terms
+
+- Terms involving only \( y \):
+  \[
+  y^\top \Sigma^{-1} y - 2 y^\top \Sigma^{-1} \mu
+  \]
+
+- Quadratic terms in \( x \):
+  \[
+  x^\top (M^\top \Sigma^{-1} M + \Sigma_x^{-1}) x
+  \]
+
+- Linear terms in \( x \):
+  \[
+  x^\top \left( -2 M^\top \Sigma^{-1} y + 2 M^\top \Sigma^{-1} \mu + 2 \Sigma_x^{-1} \mu_x \right)
+  \]
+
+- Constant terms :
+  \[
+  \mu^\top \Sigma^{-1} \mu + \mu_x^\top \Sigma_x^{-1} \mu_x
+  \]
+
+The terms involving only \( y \) can be factored outside the integral:
+\[
+p(y) \propto \exp \left( -\frac{1}{2} y^\top \Sigma^{-1} y + y^\top \Sigma^{-1} \mu \right) \int \exp \left( -\frac{1}{2} x^\top A x + x^\top (B y + c) \right) dx
+\]
+
+where we define:
+% \begin{itemize}
+% % \centering
+%     \item  \( A = M^\top \Sigma^{-1} M + \Sigma_x^{-1} \)
+%     \item  \( B = M^\top \Sigma^{-1} \)
+%     \item  \( c = \Sigma_x^{-1} \mu_x - M^\top \Sigma^{-1} \mu \)
+% \end{itemize}
+
+\[ A = M^\top \Sigma^{-1} M + \Sigma_x^{-1} \]
+\[ B = M^\top \Sigma^{-1} \]
+\[ c = \Sigma_x^{-1} \mu_x - M^\top \Sigma^{-1} \mu \]
+\textbf{Part 2}\\
+
+Because $x^\top (B y + c) $  is scalar, it is equal with his transpose $(B y + c)^\top x$  therefore:
+
+\[
+p(y) \propto \exp \left( -\frac{1}{2} y^\top \Sigma^{-1} y + y^\top \Sigma^{-1} \mu \right) \int \exp \left( -\frac{1}{2} x^\top A x +  (B y + c)^\top x \right) dx
+\]
+
+Using the identity 
+
+\[
+\int \exp \left( -\frac{1}{2} \mathbf{x}^\top \mathbf{A} \mathbf{x} + \mathbf{b}^\top \mathbf{x} \right) \, d\mathbf{x} = \sqrt{\det (2 \pi \mathbf{A}^{-1})} \exp \left( \frac{1}{2} \mathbf{b}^\top \mathbf{A}^{-1} \mathbf{b} \right)
+\]
+We can compute the integral: 
+
+\[
+\int \exp \left( -\frac{1}{2} x^\top A x +  (B y + c)^\top x \right) dx = \sqrt{\det (2 \pi {A}^{-1})} \exp \left( \frac{1}{2} (B y + c)^\top {A}^{-1} (B y + c) \right)
+\]
+
+Then we substitute to simplify the expression for $p(y)$
+
+\[
+p(y) \propto \exp \left( -\frac{1}{2} y^\top \Sigma^{-1} y + y^\top \Sigma^{-1} \mu \right)  \sqrt{\det (2 \pi {A}^{-1})} \exp \left( \frac{1}{2} (B y + c)^\top {A}^{-1} (B y + c) \right)
+\]
+
+\[
+p(y) \propto \exp \left( -\frac{1}{2} y^\top \Sigma^{-1} y + y^\top \Sigma^{-1} \mu \right)  \exp \left( \frac{1}{2} (B y + c)^\top {A}^{-1} (B y + c) \right)
+\]
+
+
+\[
+p(y) \propto \exp \left( -\frac{1}{2} y^\top \Sigma^{-1} y + y^\top \Sigma^{-1} \mu + \frac{1}{2} (B y + c)^\top {A}^{-1} (B y + c) \right)
+\]
+\begin{align*}
+p(y) &\propto \exp \Bigg( -\frac{1}{2} y^\top \Sigma^{-1} y + y^\top \Sigma^{-1} \mu + \frac{1}{2} (B y + c)^\top A^{-1} (B y + c) \Bigg) \\
+&= \exp \Bigg( -\frac{1}{2} y^\top \Sigma^{-1} y + y^\top \Sigma^{-1} \mu + \frac{1}{2} \big( y^\top B^\top A^{-1} B y + 2 y^\top B^\top A^{-1} c + c^\top A^{-1} c \big) \Bigg) \\
+&= \exp \Bigg( -\frac{1}{2} y^\top\big(  \Sigma^{-1} -  B^\top A^{-1} B  \big)y + y^\top \big( \Sigma^{-1} \mu + B^\top A^{-1} c \big) + \frac{1}{2} c^\top A^{-1} c \Bigg)
+\end{align*}
+Therefore, $Y$ follows a Gaussian distribution. \\
+
+\textbf{Part 3}\\
+
+The mean of $Y$ is:
+\[
+\langle y \rangle = \mathbf{M} \langle x \rangle + \langle \eta \rangle = \mathbf{M} \mu_x + \mu
+\]
+The covariance of $Y$ is:
+% \[
+% \quad \left\langle \left( y - \langle y \rangle \right) \left( y - \langle y \rangle \right)^\top \right\rangle = \left\langle \left( \mathbf{M} x + \eta - \mathbf{M} \mu_x - \mu \right) \left( \mathbf{M} x + \eta - \mathbf{M} \mu_x - \mu \right)^\top \right\rangle
+% \]
+
+\begin{align*}
+\left\langle \left( y - \langle y \rangle \right) \left( y - \langle y \rangle \right)^\top \right\rangle &= \left\langle \left( \mathbf{M} x + \eta - \mathbf{M} \mu_x - \mu \right) \left( \mathbf{M} x + \eta - \mathbf{M} \mu_x - \mu \right)^\top \right\rangle \\
+&= \left\langle \left( \mathbf{M} (x - \mu_x) + (\eta - \mu) \right) \left( \mathbf{M} (x - \mu_x) + (\eta - \mu) \right)^\top \right\rangle \\
+&= \left\langle \mathbf{M} (x - \mu_x) (x - \mu_x)^\top \mathbf{M}^\top + \mathbf{M} (x - \mu_x) (\eta - \mu)^\top \right. \\
+&\quad + \left. (\eta - \mu) (x - \mu_x)^\top \mathbf{M}^\top + (\eta - \mu) (\eta - \mu)^\top \right\rangle \\
+&= \mathbf{M} \langle (x - \mu_x) (x - \mu_x)^\top \rangle \mathbf{M}^\top + \mathbf{M} \langle (x - \mu_x) (\eta - \mu)^\top \rangle \\
+&\quad + \langle (\eta - \mu) (x - \mu_x)^\top \rangle \mathbf{M}^\top + \langle (\eta - \mu) (\eta - \mu)^\top \rangle
+\end{align*}
+The cross-covariance terms $\langle (x - \mu_x)(\eta - \mu)^\top \rangle$ and $\langle (\eta - \mu)(x - \mu_x)^\top \rangle $ are zero since $x$ and $\eta$ are independent. 
+\begin{align*}
+\left\langle \left( y - \langle y \rangle \right) \left( y - \langle y \rangle \right)^\top \right\rangle 
+&= \mathbf{M} \langle (x - \mu_x)(x - \mu_x)^\top \rangle \mathbf{M}^\top + \mathbf{M} \langle (x - \mu_x)(\eta - \mu)^\top \rangle \\
+&\quad + \langle (\eta - \mu)(x - \mu_x)^\top \rangle \mathbf{M}^\top + \langle (\eta - \mu)(\eta - \mu)^\top \rangle \\
+&= \mathbf{M} \langle (x - \mu_x)(x - \mu_x)^\top \rangle \mathbf{M}^\top + \langle (\eta - \mu)(\eta - \mu)^\top \rangle \\
+&= \mathbf{M} \Sigma_x \mathbf{M}^\top + \Sigma,
+\end{align*}
+Therefore:
+% \[
+% \left\langle \left( y - \langle y \rangle \right) \left( y - \langle y \rangle \right)^\top \right\rangle = \mathbf{M} \Sigma_x \mathbf{M}^\top + \Sigma
+% \]
+\[
+p(y) = \mathcal{N} \left( y \mid \mathbf{M} \mu_x + \mu, \, \mathbf{M} \Sigma_x \mathbf{M}^\top + \Sigma \right)
+\]
+
+\section*{Problem 5}
+
+To find the maximum likelihood estimator (MLE) of the Poisson parameter \(\lambda\), we start by writing the probability mass function of the Poisson distribution:
+
+\[
+p(x \mid \lambda) = \frac{e^{-\lambda} \lambda^x}{x!}, \quad x = 0, 1, 2, \dots
+\]
+
+Given a sample \( x_1, x_2, \dots, x_n \) drawn independently from this distribution, the likelihood function \( p(\lambda \mid \boldsymbol{x}) \) is the joint probability of observing this sample:
+
+
+\begin{equation*}    
+p(\lambda \mid \boldsymbol{x}) \propto \prod_{i=1}^n p(x_i \mid \lambda) = \prod_{i=1}^n \frac{e^{-\lambda} \lambda^{x_i}}{x_i!}
+\end{equation*}
+\begin{equation*}    
+p(\lambda \mid \boldsymbol{x}) \propto  \frac{e^{-n\lambda} \lambda^{\sum_{i=1}^n x_i}}{\prod_{i=1}^n x_i!}
+\end{equation*}
+To find the MLE of \(\lambda\) (which maximizes $p(\lambda \mid \boldsymbol{x})$), we take the derivative of \( p(\lambda \mid \boldsymbol{x})\) with respect to \(\lambda\) and set it to zero:
+
+\[
+\frac{p(\lambda \mid \boldsymbol{x})}{d\lambda} \propto e^{-n\lambda}  \left((\sum_{i=1}^n x_i)\lambda^{(\sum_{i=1}^n x_i) -1} -n \lambda^{\sum_{i=1}^n x_i} \right)  = 0
+\]
+
+\[
+\lambda^{(\sum_{i=1}^n x_i) -1}\left(\sum_{i=1}^n x_i -n \lambda \right)  = 0
+\]
+
+Solving for \(\lambda\), we get:
+\[
+\lambda = 0 \quad \text{or} \quad \lambda = \frac{1}{n} \sum_{i=1}^n x_i
+\]
+It is apparant that $\lambda =0 $ is a minimum, thus we check the second derivative for $\lambda = \frac{1}{n} \sum_{i=1}^n x_i$
+\[
+\frac{d^2 p(\lambda \mid \boldsymbol{x})}{d\lambda^2} \bigg|_{\lambda = \frac{1}{n} \sum_{i=1}^n x_i} < 0
+\]
+
+Therefore, the maximum likelihood estimator of \(\lambda\) is:
+
+\[
+\hat{\lambda} = \frac{1}{n} \sum_{i=1}^n x_i = \bar{x},
+\]
+
+\section*{Problem 6}
+
+Given this Gaussian mixture model
+
+\begin{equation*}
+    p(\mathbf{x}) = \sum_i p_i \mathcal{N}(\mathbf{x} | \boldsymbol{\mu}_i, \boldsymbol{\Sigma}_i), \quad p_i > 0, \quad \sum_i p_i = 1
+\end{equation*}
+
+The mean is:
+
+\begin{equation} \label{eq:P6_mean}
+\begin{aligned}    
+    \boldsymbol{\mu}_{\text{GMM}} &=
+    \mathbb{E}[\mathbf{x}] =
+    \mathbb{E}[
+    \sum_i p_i \mathcal{N}(\mathbf{x} | \boldsymbol{\mu}_i, \boldsymbol{\Sigma}_i)] \\&=
+    \sum_i p_i \mathbb{E}[
+     \mathcal{N}(\mathbf{x} | \boldsymbol{\mu}_i, \boldsymbol{\Sigma}_i)] \\&=
+    \sum_i p_i \boldsymbol{\mu}_i
+\end{aligned}
+\end{equation}
+
+The covariance can be calculated as:
+
+\begin{equation} \label{eq:P6_covariance}
+\begin{aligned}
+    \boldsymbol{\Sigma}_{\text{GMM}} &= \mathbb{E}[(\mathbf{x} - \mathbb{E}[\mathbf{x}])(\mathbf{x} - \mathbb{E}[\mathbf{x}])^\top]
+\\ &= \mathbb{E}[\mathbf{x} \mathbf{x}^\top] - \mathbb{E}[\mathbf{x}] \mathbb{E}[\mathbf{x}]^\top
+\end{aligned}
+\end{equation}
+
+
+We know that:
+\begin{equation*}
+    \mathbb{E}[\mathbf{x} \mathbf{x}^\top | i] = \boldsymbol{\Sigma}_i + \boldsymbol{\mu}_i \boldsymbol{\mu}_i^\top
+\end{equation*}
+
+Therefore, we can calculate the second moment:
+\begin{equation*}
+    \mathbb{E}[\mathbf{x} \mathbf{x}^\top] = \sum_i p_i \mathbb{E}[\mathbf{x} \mathbf{x}^\top | i]
+\end{equation*}
+
+Substituting:
+
+\begin{equation*}
+    \mathbb{E}[\mathbf{x} \mathbf{x}^\top] = \sum_i p_i (\boldsymbol{\Sigma}_i + \boldsymbol{\mu}_i \boldsymbol{\mu}_i^\top)
+\end{equation*}
+
+Then, substituting the mean from \eqref{eq:P6_mean}:
+
+\begin{equation*}
+    \mathbb{E}[\mathbf{x}] \mathbb{E}[\mathbf{x}]^\top = \left( \sum_i p_i \boldsymbol{\mu}_i \right) \left( \sum_j p_j \boldsymbol{\mu}_j^\top \right)
+\end{equation*}
+
+Finally, combining the above results and substituting in \eqref{eq:P6_covariance}, we get:
+
+\begin{equation*}
+    \boldsymbol{\Sigma}_{\text{GMM}} = \sum_i p_i (\boldsymbol{\Sigma}_i + \boldsymbol{\mu}_i \boldsymbol{\mu}_i^\top) - \left( \sum_i p_i \boldsymbol{\mu}_i \right) \left( \sum_j p_j \boldsymbol{\mu}_j^\top \right)
+\end{equation*}
+
+
+\end{document}
