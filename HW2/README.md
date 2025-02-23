@@ -15,11 +15,11 @@ A repository for solution to the problems of:
 
 1. Clone this repository:   
     ```
-    git clone https://github.com/Nick-Liou/Probabilistic-Modeling-and-Reasoning-HW2.git
+    git clone https://github.com/Nick-Liou/Probabilistic-Modeling-and-Reasoning.git
     ```
 2. Navigate to the project directory:   
     ```
-    cd Probabilistic-Modeling-and-Reasoning-HW2
+    cd Probabilistic-Modeling-and-Reasoning/HW2
     ```
 3. Install the required dependencies using pip:
     ```
